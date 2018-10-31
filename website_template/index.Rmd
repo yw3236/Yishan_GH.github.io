@@ -14,7 +14,7 @@ This website is aim to introduce myself to the professors who I want to do resea
 
 ### My Professional Resume
 
-<img src = "Resume.pdf" width = "4000" height = "4000">
+<img src = "images/Resume.pdf" width = "4200" height = "4200">
 
 ### My Links
 

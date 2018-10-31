@@ -1,6 +1,0 @@
----
-title: "Yishan_GH"
-output: _document
----
-
-
