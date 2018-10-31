@@ -4,6 +4,14 @@ title: "About"
 
 ### About this site
 
-Sometimes you need to say a bit about the site -- how it was made, where it's hosted, where the source code can be found. 
+* How it was made?
 
-If this is for a project or analysis, I recommend giving some details about the R package versions that you used to create the content.
+    This site was made on Github by R Markdown file.
+
+* Where it's hosted?
+
+    The site is hosted at [here](https://github.com/yw3236/Yishan_GH.github.io).
+
+* Where the source code can be found?
+
+    The source code can be found at [here](https://github.com/yw3236/Yishan_GH.github.io).
