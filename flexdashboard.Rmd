@@ -14,4 +14,42 @@ library(plotly)
 library(flexdashboard)
 ```
 
+```{r}
+data(instacart)
 
+set.seed(1)
+
+sample_instacart = instacart[sample(nrow(instacart), 1000), ]
+```
+
+Column {data-width = 650}
+-----------------------------------------------------------------------
+
+### Chart A
+
+```{r}
+order_aisles = sample_instacart %>%
+  select(., aisle, product_id) %>%
+  arrange(., aisle, product_id) %>%
+  group_by(aisle) %>%
+  summarise(item_num = n()) %>%
+  arrange(., desc(item_num))
+
+plot_ly(order_aisles, x = ~reorder(aisle, -item_num), y = ~item_num, type = "scatter", mode = "markers", alpha = 0.5) %>%
+  layout(xaxis = list(title = 'aisle'), yaxis = list(title = 'item_num'))
+```
+
+Column {data-width = 350}
+-----------------------------------------------------------------------
+
+### Chart B
+
+```{r}
+
+```
+
+### Chart C
+
+```{r}
+
+```
