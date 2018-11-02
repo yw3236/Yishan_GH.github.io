@@ -36,7 +36,7 @@ order_aisles = sample_instacart %>%
   arrange(., desc(item_num))
 
 plot_ly(order_aisles, x = ~reorder(aisle, -item_num), y = ~item_num, type = "scatter", mode = "markers", alpha = 0.5) %>%
-  layout(xaxis = list(title = 'aisle'), yaxis = list(title = 'item_num'))
+  layout(xaxis = list(title = 'aisle'), yaxis = list(title = 'number of item'))
 ```
 
 Column {data-width = 350}
@@ -60,5 +60,11 @@ plot_ly(order_day, x = ~day, y = ~day_num, color = ~day, type = "bar") %>%
 ### Chart C
 
 ```{r}
+hour_day = sample_instacart %>%
+  select(order_hour_of_day) %>%
+  group_by(order_hour_of_day) %>%
+  summarise(hour_num = n())
 
+plot_ly(hour_day, x = ~order_hour_of_day, y = ~hour_num, type = 'scatter', mode = 'lines') %>%
+  layout(xaxis = list(title = 'day'), yaxis = list(title = 'total day number'))
 ```
