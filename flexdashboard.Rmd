@@ -66,5 +66,5 @@ hour_day = sample_instacart %>%
   summarise(hour_num = n())
 
 plot_ly(hour_day, x = ~order_hour_of_day, y = ~hour_num, type = 'scatter', mode = 'lines') %>%
-  layout(xaxis = list(title = 'day'), yaxis = list(title = 'total day number'))
+  layout(xaxis = list(title = 'order hour'), yaxis = list(title = 'counts'))
 ```
