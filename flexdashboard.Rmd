@@ -45,7 +45,16 @@ Column {data-width = 350}
 ### Chart B
 
 ```{r}
+order_day = sample_instacart %>%
+  select(order_dow) %>%
+  group_by(order_dow) %>%
+  summarise(day_num = n()) %>%
+  ungroup() %>%
+  mutate(day = c("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")) %>%
+  mutate(day = factor(day, levels = c("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")))
 
+plot_ly(order_day, x = ~day, y = ~day_num, color = ~day, type = "bar") %>%
+  layout(xaxis = list(title = 'day'), yaxis = list(title = 'total day number'))
 ```
 
 ### Chart C
