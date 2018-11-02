@@ -2,8 +2,7 @@
 title: "flexdashboard"
 output: 
   flexdashboard::flex_dashboard:
-    orientation: columns
-    vertical_layout: fill
+    vertical_layout: scroll
 ---
 
 ```{r}
@@ -22,9 +21,6 @@ set.seed(1)
 sample_instacart = instacart[sample(nrow(instacart), 1000), ]
 ```
 
-Column {data-width = 650}
------------------------------------------------------------------------
-
 ### Chart A
 
 ```{r}
@@ -39,9 +35,6 @@ plot_ly(order_aisles, x = ~reorder(aisle, -item_num), y = ~item_num, type = "sca
   layout(xaxis = list(title = 'aisle'), yaxis = list(title = 'number of item'))
 ```
 
-Column {data-width = 350}
------------------------------------------------------------------------
-
 ### Chart B
 
 ```{r}
@@ -54,7 +47,7 @@ order_day = sample_instacart %>%
   mutate(day = factor(day, levels = c("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat")))
 
 plot_ly(order_day, x = ~day, y = ~day_num, color = ~day, type = "bar") %>%
-  layout(xaxis = list(title = 'day'), yaxis = list(title = 'total day number'))
+  layout(xaxis = list(title = 'day'), yaxis = list(title = 'counts'))
 ```
 
 ### Chart C
